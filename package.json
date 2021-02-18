@@ -1,0 +1,32 @@
+{
+  "name": "smooth-reducers",
+  "version": "1.0.0",
+  "description": "React reducers I want to share across my \"smooth\" branded projects ",
+  "main": "lib/index.js",
+  "homepage": "https://github.com/KhalfaniW/smooth-reducers",
+  "scripts": {
+    "prepare": "babel src -d lib",
+    "test": "jest"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "immer": "^8.0.1",
+    "lodash": "^4.17.20",
+    "seedrandom": "^3.0.5",
+    "smooth-tools": "^1.0.3"
+  },
+ "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.16",
+    "@babel/core": "^7.12.17",
+    "@babel/plugin-transform-modules-commonjs": "^7.12.13",
+    "@babel/preset-env": "^7.12.16",
+    "babel-jest": "^26.6.3",
+    "jest": "^26.6.3"
+  }
+}
