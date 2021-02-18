@@ -1,4 +1,7 @@
 * Why
-  Group utility functions together to avoid copying and pasting code
-  
-  + Random number tools 
+  Group react reducersutility functions together to avoid copying and pasting code
+* What  
+  + Randomnes reducer
+    - Uses seeded random numbers to make randomness testable
+  + time reducer 
+    - Allows for replaying time ticks if "setInterval" ticks are skipped
