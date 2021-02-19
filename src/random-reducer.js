@@ -22,6 +22,13 @@ export function randomReducer(state, action) {
           seed: draftState.seed,
         });
         return draftState;
+      case "GET_NEW_RANDOM_BOOLEAN":
+        draftState.seed = seedrandom(draftState.seed)();
+        draftState.currentRandomInt = getRandomBoolean({
+          probabilityOfTrue: action.probabilityOfTrue,
+          seed: draftState.seed,
+        });
+        return draftState;
 
       default:
         return state;
@@ -39,6 +46,13 @@ export function createRandomSeedState(seed) {
 export function changeRandomNumber({min, max}) {
   return {
     type: "GET_NEW_RANDOM_NUMBER",
+    min,
+    max,
+  };
+}
+export function changeRandomBoolean({min, max}) {
+  return {
+    type: "GET_NEW_RANDOM_BOOLEAN",
     min,
     max,
   };
