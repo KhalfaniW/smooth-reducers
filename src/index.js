@@ -13,6 +13,7 @@ import {
 import {
   todoListReducer,
   createTodoListReducerState,
+  getAllItems,
   getCompletedItems,
   getNonCompletedItems,
   addItem,
@@ -21,28 +22,28 @@ import {
   resetItem,
 } from "./todo-list-reducer.js";
 
-const allReducerTools = {
-  randomReducerTools: {
+const randomReducerTools = {
     randomReducer,
     createRandomReducerState,
     changeRandomNumber,
     changeRandomBoolean,
   },
-  timeReducerTools: {
+  timeReducerTools = {
     timeReducer,
     createTimerState,
     createIntervalEvent,
     createOneTimeEvent,
   },
-  todoListReducerTools: {
+  todoListReducerTools = {
     todoListReducer,
     createTodoListReducerState,
+    getAllItems,
     getCompletedItems,
     getNonCompletedItems,
     addItem,
     completeItem,
     removeItem,
     resetItem,
-  },
-};
-export default allReducerTools;
+  };
+
+export {randomReducerTools, timeReducerTools, todoListReducerTools};

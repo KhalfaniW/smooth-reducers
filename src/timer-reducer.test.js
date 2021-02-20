@@ -2,13 +2,15 @@
 import {range, times} from "lodash";
 import produce from "immer";
 
-import {
+import {timeReducerTools} from "./index.js";
+
+const {
   createIntervalEvent,
   createOneTimeEvent,
   createTimerState,
   getSkippedTicks,
   timeReducer,
-} from "./time-reducer";
+} = timeReducerTools;
 
 describe("Time events ", () => {
   test("run multiple times ", () => {

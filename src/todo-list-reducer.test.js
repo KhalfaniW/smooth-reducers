@@ -1,19 +1,23 @@
-import {
+import {todoListReducerTools} from "./index.js";
+
+const {
   todoListReducer,
   createTodoListReducerState,
+  getAllItems,
   getCompletedItems,
   getNonCompletedItems,
   addItem,
   completeItem,
   removeItem,
   resetItem,
-} from "./todo-list-reducer";
+} = todoListReducerTools;
 
 test("does not add same item twice", () => {
   let state = createTodoListReducerState({
     items: ["completable_item1", "item3"],
   });
   expect(getNonCompletedItems(state)).toEqual(["completable_item1", "item3"]);
+  expect(getAllItems(state)).toEqual(["completable_item1", "item3"]);
 
   state = todoListReducer(state, addItem("completable_item2"));
   state = todoListReducer(state, addItem("item4"));
@@ -36,6 +40,11 @@ test("add and remove items ", () => {
   state = todoListReducer(state, addItem("completable_item2"));
 
   expect(getNonCompletedItems(state)).toEqual([
+    "completable_item1",
+    "item3",
+    "completable_item2",
+  ]);
+  expect(getAllItems(state)).toEqual([
     "completable_item1",
     "item3",
     "completable_item2",

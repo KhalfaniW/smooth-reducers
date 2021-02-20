@@ -1,8 +1,10 @@
-import {
+import {randomReducerTools} from "./index.js";
+
+const {
   changeRandomNumber,
   createRandomReducerState,
   randomReducer,
-} from "./random-reducer";
+} = randomReducerTools;
 
 test("get multiple random number", () => {
   const runEvent = jest.fn((state) => state);

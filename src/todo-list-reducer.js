@@ -41,6 +41,9 @@ export function createTodoListReducerState({items}) {
 
   return {todoItemDictionary: itemDictionary};
 }
+export function getAllItems(todoListState) {
+  return Object.keys(todoListState.todoItemDictionary);
+}
 export function getCompletedItems(todoListState) {
   const allItems = Object.entries(todoListState.todoItemDictionary).filter(
     ([key, value]) => {
